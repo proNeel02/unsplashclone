@@ -1,0 +1,388 @@
+a{
+    text-decoration: none;
+    color: #71717171;
+}
+.logo{
+    width: 32px;
+    height: 32px;
+}
+nav{
+    display: flex;
+    background-color: #fff;
+    height: 62px;
+    padding-block: 11px;
+}
+
+.rZMhb{
+   height: 38px;
+   width: 16px;
+}
+
+.ceaSi{
+    display: flex;
+    flex-grow: 1;
+    /* align-items: center; */
+}
+
+.ceaSi button{
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.ceaSi button img{
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+.aWr4u{
+ background-color: #eee;
+ align-self: center;
+ flex-grow: 1;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 15px;
+ position: relative;
+ height: 40px;
+ border-radius: 24px;
+ box-shadow: 0 0 0 1px #eee;
+}
+
+.focus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 40px;
+    margin-right: -10px;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.focus button{
+    cursor: pointer;
+}
+.search_content{
+flex-grow: 1;
+display: flex;
+font-size: 14px;
+}
+
+.search_content input{
+    background-color: #eee;
+    width: 100%;
+    flex-grow: 1;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    padding-bottom:2px;
+    font-size: 100%;
+}
+
+.parent_list{
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.list {
+    color: #767676 !important;
+    list-style-type: none;
+    display: flex;
+    column-gap: 24px;
+    padding-inline:16px;
+    transition: all 0.1s ease-in-out;
+}
+
+.list .l1, .l2, .l3{
+    cursor: pointer;
+}
+
+.list .l1:hover, .l2:hover{
+    color: #111 !important;
+}
+
+
+.parent_list ul li:nth-child(3){
+    color: #111111;
+}
+
+.vertical_line{
+    align-self: center;
+    background-color: #d1d1d1;
+    content: "Heelo";
+    height: 32px;
+    width: 1px;
+}
+
+.login_section{
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.login_section a{
+    color: #767676;
+height: 32px;
+line-height: 30px;
+padding: 0 11px;
+transition: all 0.1s ease-in-out;
+}
+
+.login_section a:hover{
+ color:#111;
+}
+
+.login_section button{
+    height: 32px;
+    background-color: #fff;
+    padding: 0 11px;
+    box-shadow: 0 1px 1px #00000014;
+    border-radius: 4px;
+    border:0.5px solid #d1d1d1 !important;
+    color: #767676 !important;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.login_section button:hover{
+    color:#111 !important;
+    border:0.5px solid #111 !important;
+}
+
+.ham_parent{
+    align-self: center;
+}
+
+.ham_parent button{
+    height: 100%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.ham_parent button img{
+    display: block;
+    height: 20px    ;
+    width: 20px;
+    
+}
+
+.reset_parent{
+    width: 44px;
+    justify-content: center;
+    height: 40px;
+    cursor: pointer;
+}
+
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    display: none;
+  }
+  
+.reset{
+    height: 16px !important;
+    width: 16px !important;
+}  
+
+.line_maker_clear{
+    height: 16px;
+    width: 1px;
+    background-color: #c4c4c4;
+    align-self: center;
+}
+
+
+
+
+@media only screen and (max-width:768px){
+    .hide_login{
+        display: none;
+    }
+}
+
+.ham_click{
+    width: 32px;
+    height: 2px;
+}
+
+.dialog_Box{
+    border:1px solid #d1d1d1;
+    border-radius: 4px;
+    min-width: 268px;
+    position:absolute;
+    inset: 0 0 auto auto;
+    transform: translate(-20px, 65px);
+    z-index: 1;
+    box-shadow: 0px 8px 16px #00000029;
+    transition: all 20s ease-in-out;
+    min-width: 135px;
+    padding: 24px 32px 32px;
+}
+
+.dialog_Box .child_Box{
+    transition: transform 200ms cubic-bezier(0.24, 0.22, 0.015, 1.56) 0s, opacity 100ms ease-in-out 0s;
+}
+
+.child_Box2{
+    background-color: rgb(255, 255, 255);
+}
+
+.company header img{   
+    height: 20px;
+    width: 20px;
+}
+
+.company header{
+    display: grid;
+    padding: 8px 0px;
+    grid-template-columns: 24px 1fr;
+    align-items: center;
+}
+
+.company header h1{
+    color: #111111;
+}
+
+.company_listing li {
+    width: 162px;
+    height: 36px;
+    padding: 8px 12px;
+    display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   transition: all 1s ease-in;
+}
+.company_listing li a:hover{
+    transition: all 0.1s ease-in-out;
+    color: #111111 !important;
+}
+
+.company header h1{
+    width: 110px;
+    height: 20px;
+}
+
+.dialog_Box .child_Box .child_Box2 ul{
+   display: flex;
+}
+
+.company_listing{
+    color: #767676;
+    width: 204px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.social_Media{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 200px;
+}
+.social_Media li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    width: 32px;
+}
+
+.social_Media li a img{
+    width: 20px;
+    height: 20px;
+}
+
+.company ul li a, .details ul li a{
+    color:#767676
+}
+.marker::marker{
+    content: "";
+}
+.company--dropDown{
+    height:15px;
+    width: 15px;
+}
+.details[open] .company--dropDown{
+    transition: all 0.1s ease-in-out;
+    transform: rotate(180deg);
+}
+
+details .marker > div{
+    display: grid;
+    grid-template-columns: 24px 1fr 24px;
+    grid-column-gap:16px;
+} 
+
+.bottom-border-div{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #0003;
+    padding: 10px 24px;
+}
+
+.left--list--content{
+    display: flex;
+    gap: 24px;
+}
+
+.left--list--content li a{
+     color: #767676 !important;;
+}
+
+.bottom-border-div div button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #767676;
+    background-color: #fff;
+}
+
+.bottom-border-div div button .down-arrow::after{
+ border-style: solid;
+ border-color: #d1d1d1 #0000 #0000;
+ content: "";
+ border-width: 6px 5px;
+ position: relative;
+ top: 12px;
+ transition: border .1s ease-in-out;
+}
+.bottom-border-div div button:hover, .left--list--content li a:hover{
+    transition: all 0.3s ease-in-out;
+    color: #1d1d1d !important;
+}
+
+.bottom-border-div div button .down-arrow:hover{
+    border-color: #1d1d1d #0000 #0000 !important;
+}
+@media only screen and (max-width:950px){
+  
+  .child_Box2 ul{
+    gap: 10px !important;
+    text-align: left !important;
+    min-width: 268px;
+  }
+
+    .hide_Options{
+        display: none;
+    }
+    .dialog_Box {
+        min-width: 268px;
+    }
+
+    .dialog_Box .child_Box .child_Box2 ul {
+        flex-direction: column !important;
+
+    }
+}
+
