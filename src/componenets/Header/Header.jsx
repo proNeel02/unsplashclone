@@ -17,6 +17,7 @@ import language from "../../assets/langugae.png";
 import legal from "../../assets/legal1.png";
 import { useClickAway } from "@uidotdev/usehooks";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [placeholder, setPlaceHolder] = useState(false);
   const [isShow, setIsShow] = useState(window.innerWidth <= 950 ? false : true);
@@ -78,11 +79,12 @@ const Header = () => {
 
   return (
     <>
+      {/* Section-1 */}
       <header>
         <nav className="global">
-          <a href="/">
+          <Link to="/">
             <img className="logo" src={logo} alt="" title="Search Unsplash" />
-          </a>
+          </Link>
           <div className="rZMhb"></div>
           <div className="ceaSi">
             <form
@@ -132,7 +134,16 @@ const Header = () => {
 
             <div className="parent_list hide_Options">
               <ul className="list">
-                <li className="l1">Explore</li>
+                <li className="l1">
+                  Explore
+                  <div className="parentOfExplore">
+                    <div className="explore-hover">
+                      <div>Images</div>
+                      <div>Backgrounds</div>
+                      <div>Wallpapers</div>
+                    </div>
+                  </div>
+                </li>
                 <li className="l2">Advertise</li>
                 <li className="l3">Unplash+</li>
               </ul>
@@ -142,7 +153,7 @@ const Header = () => {
             </div>
 
             <div className="login_section hide_login">
-              <a href="#"> Log in </a>
+              <Link to="/login"> Log in </Link>
               <button>Submit a photo</button>
             </div>
           </div>
@@ -565,7 +576,9 @@ const Header = () => {
                           <button className="submitphoto">
                             Submit a photo
                           </button>
-                          <button className="loginbtn">Log in</button>
+                          <button className="loginbtn">
+                            <Link to="/login">Log in</Link>
+                          </button>
                         </div>
                         <span className="span_child2">
                           New to Unsplash? Sign up for free
@@ -579,17 +592,8 @@ const Header = () => {
           </div>
         </nav>
       </header>
-      <div>
-        <div>
-          <div>
-            <div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Section -2 */}
+      <div></div>
     </>
   );
 };

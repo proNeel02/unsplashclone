@@ -101,6 +101,7 @@ ul{
 
 .list .l1, .l2, .l3{
     cursor: pointer;
+    position: relative;
 }
 
 .list .l1:hover, .l2:hover{
@@ -178,6 +179,57 @@ transition: all 0.1s ease-in-out;
     justify-content: center;
     height: 40px;
     cursor: pointer;
+}
+
+
+.explore-hover > div{
+    position: relative;
+    width: 100% !important;
+    padding: 10px 0px;
+    color:#767676;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.explore-hover > div:hover{
+    color:#1d1d1d;
+    background-color: #eeeeee !important;
+}
+
+li .explore-hover{
+    width: 140px;
+    border: 1px solid #d1d1d1 !important;
+    height: 135px;
+    background-color: #fff;
+    inset: 17px 0px;
+    border-radius: 5px;
+
+    display: flex;
+    padding-top: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3px;
+}
+
+
+li .parentOfExplore{
+    position: absolute;
+    display: none;
+    width: 160px;
+    height: 160px;
+    padding-top: 10px;
+}
+li .parentOfExplore:hover{
+    display: block !important;
+}
+
+.list .l1:hover{
+    .parentOfExplore{
+        display: block !important;
+    }
 }
 
 
@@ -260,11 +312,13 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .ham_click{
+    z-index: 100000;
     width: 32px;
     height: 2px;
 }
 
 .dialog_Box{
+    z-index: 100000 !important;
     border:1px solid #d1d1d1;
     border-radius: 4px;
     min-width: 268px;
@@ -399,6 +453,7 @@ details .marker > div{
     color: #767676;
     background-color: #fff;
 }
+
 
 .bottom-border-div div button .down-arrow::after{
  border-style: solid;
