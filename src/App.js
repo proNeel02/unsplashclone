@@ -1,4 +1,5 @@
 import "./App.css";
+import Forgotpassword from "./componenets/ForgetPassWord/forgotpassword";
 import Home from "./componenets/Home/Home";
 import Login from "./componenets/Login/login";
 
@@ -14,6 +15,10 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
     ],
+  },
+  {
+    path: "/forgotpassword",
+    element: <Forgotpassword />,
   },
 ]);
 function App() {

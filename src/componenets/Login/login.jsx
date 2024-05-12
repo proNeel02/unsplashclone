@@ -2,7 +2,7 @@ import React from "react";
 import "./Login.css";
 import { ReactComponent as Loginsvg2 } from "../../assets/loginsvg2.svg";
 import { ReactComponent as Loginpage1 } from "../../assets/loginpage1.svg";
-
+import { Link } from "react-router-dom";
 const SVGComponent = ({ fill, stroke, Component }) => {
   return <Component fill={fill} stroke={stroke} className="svg-1" />;
 };
@@ -42,12 +42,13 @@ const Login = () => {
             <label>
               <div className="password-div">
                 Password{" "}
-                <a
+                <Link
                   className="password_link"
-                  href="https://unsplash.com/users/password/new"
+                  // href="https://unsplash.com/users/password/new"
+                  to="/forgotpassword"
                 >
                   Forgot your password?
-                </a>
+                </Link>
               </div>
               <div className="adjusting__div"></div>
               <input />

@@ -1,6 +1,6 @@
 a{
     text-decoration: none;
-    color: #71717171;
+    
 }
 .logo{
     width: 32px;
@@ -468,6 +468,8 @@ details .marker > div{
     transition: all 0.3s ease-in-out;
     color: #1d1d1d !important;
 }
+
+
 
 .bottom-border-div div button .down-arrow:hover{
     border-color: #1d1d1d #0000 #0000 !important;
