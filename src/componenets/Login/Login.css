@@ -125,3 +125,16 @@
    right: 5%;
    top: 0;
 }
+
+.login__Section__2 a{
+    text-decoration: underline !important;
+    color: #767676;
+}
+.login__Section__2 a:hover{
+    color: #1d1d1d;
+}
+
+.password_link{
+    text-decoration: underline !important;
+    color: #767676;
+}
