@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import logo from "../../assets/logo.png";
 import "./header.css";
-import search from "../../assets/search.png";
+import search from "../../assets/search.svg";
+// import { ReactComponent as Search } from "../../assets/search.svg";
 import focus from "../../assets/focus.png";
 import ham from "../../assets/ham.png";
 import cross from "../../assets/cross.png";
@@ -27,6 +28,7 @@ const Header = () => {
   const [showClearButton, setShowClearButton] = useState(true);
   const [InputValue, setInputValue] = useState("");
 
+  const [isFocus, setIsFocus] = useState(false);
   const ref = useClickAway(() => {
     setIsMenuOpen(false);
   });
@@ -40,11 +42,6 @@ const Header = () => {
       }
     };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
     const watchViewWidth = () => {
       if (window.innerWidth <= 950) {
         setIsShow(false);
@@ -52,8 +49,28 @@ const Header = () => {
         setIsShow(true);
       }
     };
+
+    const handleFocus = () => {
+      setIsFocus(true);
+    };
+
+    const handleBlur = () => {
+      setIsFocus(false);
+    };
+    const inputElement = document.getElementById("myInput");
+
+    window.addEventListener("resize", handleResize);
     window.addEventListener("resize", watchViewWidth);
-    return () => window.removeEventListener("resize", watchViewWidth);
+
+    inputElement.addEventListener("focus", handleFocus);
+    inputElement.addEventListener("blur", handleBlur);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", watchViewWidth);
+      inputElement.removeEventListener("focus", handleFocus);
+      inputElement.removeEventListener("blur", handleBlur);
+    };
   }, []);
 
   const handleMenu = () => {
@@ -92,6 +109,7 @@ const Header = () => {
               onSubmit={(e) => {
                 e.preventDefault();
               }}
+              style={{ backgroundColor: isFocus ? "#fff" : "#eee" }}
             >
               <button>
                 <img src={search} alt="search" title="search Unsplash" />
@@ -107,6 +125,7 @@ const Header = () => {
                       ? "Search images"
                       : "Search high-resolution images"
                   }
+                  style={{ backgroundColor: isFocus ? "#fff" : "#eee" }}
                   onChange={(e) => handleSearch(e)}
                 />
               </div>
@@ -144,7 +163,11 @@ const Header = () => {
                     </div>
                   </div>
                 </li>
-                <li className="l2">Advertise</li>
+
+                <Link to="/advertise">
+                  {" "}
+                  <li className="l2">Advertise</li>
+                </Link>
                 <li className="l3">Unplash+</li>
               </ul>
               <div className="rZMhb"></div>
@@ -201,9 +224,12 @@ const Header = () => {
                                 <li>
                                   <a href="#">About</a>
                                 </li>
-                                <li>
-                                  <a href="#">Advertise</a>
-                                </li>
+
+                                <Link to="/advertise">
+                                  {" "}
+                                  <li>Advertise</li>
+                                </Link>
+
                                 <li>
                                   <a href="#">History</a>
                                 </li>
@@ -253,9 +279,11 @@ const Header = () => {
                                 <li>
                                   <a href="#">About</a>
                                 </li>
-                                <li>
-                                  <a href="#">Advertise</a>
-                                </li>
+
+                                <Link to="/advertise">
+                                  <li>Advertise</li>
+                                </Link>
+
                                 <li>
                                   <a href="#">History</a>
                                 </li>
@@ -593,7 +621,106 @@ const Header = () => {
         </nav>
       </header>
       {/* Section -2 */}
-      <div></div>
+      <div className="section__2">
+        <div className="section__2_1">
+          <div className="section__2_1__2">
+            <div className="section__2_container">
+              {/* part--1 */}
+              <div className="part--1">
+                <ul>
+                  <li>
+                    <span style={{ boxShadow: "inset 0 -2px #111" }}>
+                      Editorial
+                    </span>
+                  </li>
+                  <li>
+                    <span>Unsplash+</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* part--2 */}
+              <div className="part--2">
+                <div className="part--2_child"></div>
+              </div>
+
+              {/* Part--3 */}
+              <div style={{ minWidth: "0" }}>
+                <div className="carrier__btn">
+                  {/* Right Button */}
+                  <div className="right__btn">
+                    <button type="button" title="scroll list to the right">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        version="1.1"
+                        aria-hidden="false"
+                        fill="#767676"
+                      >
+                        <desc lang="en-US">Chevron right</desc>
+                        <path d="M8.5 5.5 10 4l8 8-8 8-1.5-1.5L15 12 8.5 5.5Z"></path>
+                      </svg>
+                    </button>
+                  </div>
+
+                  {/* Left btn */}
+                  <div className="left__btn">
+                    <button type="button" title="scroll list to the left">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        version="1.1"
+                        aria-hidden="false"
+                        fill="#767676"
+                      >
+                        <desc lang="en-US">Chevron left</desc>
+                        <path d="M15.5 18.5 14 20l-8-8 8-8 1.5 1.5L9 12l6.5 6.5Z"></path>
+                      </svg>
+                    </button>
+                  </div>
+
+                  {/* main content */}
+                  <div className="Part--3">
+                    <ul>
+                      <li style={{ display: "none" }}>Editorial</li>
+                      <li style={{ display: "none" }}>Unsplash+</li>
+                      <li>
+                        <div>
+                          <span className="featured">
+                            <span>Featured</span>
+                          </span>
+                          UGC
+                        </div>
+                      </li>
+                      <li>Wallpapers</li>
+                      <li>Nature</li>
+                      <li>3D Renders</li>
+                      <li>Travel</li>
+                      <li>Architecture &amp; Interiors</li>
+                      <li>Textures &amp; Patterns</li>
+                      <li>Street Photography</li>
+                      <li>Film</li>
+                      <li>Archival</li>
+                      <li>Experimental</li>
+                      <li>Animals</li>
+                      <li>Fashion &amp; Beauty</li>
+                      <li>People</li>
+                      <li>Spirituality</li>
+                      <li>Business &amp; Work</li>
+                      <li>Food &amp; Drink</li>
+                      <li>Health &amp; Wellness</li>
+                      <li>Sports</li>
+                      <li>Current Events</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
