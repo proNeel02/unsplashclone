@@ -1,0 +1,10 @@
+
+@media only screen and (max-width: 768px){
+    .carrier__btn::before{
+        width: 100px !important;
+    }
+
+    .carrier__btn::after{
+        width: 100px !important;
+    }
+}

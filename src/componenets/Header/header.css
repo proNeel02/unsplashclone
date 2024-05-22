@@ -49,6 +49,7 @@ nav{
  box-shadow: 0 0 0 1px #eee;
 }
 
+
 .focus{
     display: flex;
     align-items: center;
@@ -206,11 +207,9 @@ li .explore-hover{
     border-radius: 5px;
 
     display: flex;
-    padding-top: 10px;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    gap: 3px;
+    align-items: center;    
 }
 
 
@@ -220,6 +219,7 @@ li .parentOfExplore{
     width: 160px;
     height: 160px;
     padding-top: 10px;
+    z-index: 2;
 }
 li .parentOfExplore:hover{
     display: block !important;
@@ -311,24 +311,23 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .ham_click{
-    z-index: 100000;
     width: 32px;
     height: 2px;
 }
 
 .dialog_Box{
-    z-index: 100000 !important;
+    background-color: #fff;
     border:1px solid #d1d1d1;
     border-radius: 4px;
     min-width: 268px;
     position:absolute;
     inset: 0 0 auto auto;
     transform: translate(-20px, 65px);
-    z-index: 1;
     box-shadow: 0px 8px 16px #00000029;
     transition: all 20s ease-in-out;
     min-width: 135px;
     padding: 24px 32px 32px;
+    z-index: 2;
 }
 
 .dialog_Box .child_Box{
@@ -356,6 +355,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .company_listing li {
+    color: #767676;
     width: 162px;
     height: 36px;
     padding: 8px 12px;
@@ -364,7 +364,7 @@ input[type="search"]::-webkit-search-cancel-button {
    align-items: center;
    transition: all 1s ease-in;
 }
-.company_listing li a:hover{
+.company_listing li a:hover, .company_listing li:hover{
     transition: all 0.1s ease-in-out;
     color: #111111 !important;
 }
@@ -384,6 +384,7 @@ input[type="search"]::-webkit-search-cancel-button {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    z-index: 2;
 }
 
 .social_Media{
@@ -512,6 +513,7 @@ details .marker > div{
  background: #fff;
  position: sticky;
  top: 62px;
+ z-index: 1;
 }
 
 .section__2_1{
@@ -557,6 +559,7 @@ details .marker > div{
     padding: 16px 0px;
     overflow: scroll hidden;
     scrollbar-width: none;
+    scroll-behavior: smooth
 }
 
 .Part--3 ul{
@@ -573,6 +576,7 @@ details .marker > div{
 
 .featured{
     position: relative;
+    bottom: -2px
 }
 
 .featured span{
@@ -595,7 +599,6 @@ details .marker > div{
     align-items: center;
 }
 
-
 .left__btn{
     left :0;
     height: 100%;
@@ -604,19 +607,16 @@ details .marker > div{
     align-items: center;
 }
 
-
 .carrier__btn{
     position: relative;
 }
 
 .carrier__btn::before{
-    
     width: 200px;
     position: absolute;
     content: "";
     bottom: 0;
     top: 0;
-    /* transition: opacity .2s ease-in-out; */
     z-index: 1;
     right:0;
     height:100%;
@@ -624,13 +624,11 @@ details .marker > div{
 }
 
 .carrier__btn::after{
-
     width: 200px;
     position: absolute;
     content: "";
     bottom: 0;
     top: 0;
-    /* transition: opacity .2s ease-in-out; */
     z-index: 1;
     left:0;
     height:100%;
@@ -646,3 +644,9 @@ details .marker > div{
     cursor: pointer;
     z-index: 2;
 }
+
+
+.carrier__btn.change-opacity-before::before,.carrier__btn.change-opacity-after::after {
+    display: none;
+}
+

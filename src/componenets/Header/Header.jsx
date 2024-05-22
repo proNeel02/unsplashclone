@@ -19,6 +19,8 @@ import legal from "../../assets/legal1.png";
 import { useClickAway } from "@uidotdev/usehooks";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import HeaderOption from "../HeaderOption/HeaderOption";
+import { useLocation } from "react-router-dom";
 const Header = () => {
   const [placeholder, setPlaceHolder] = useState(false);
   const [isShow, setIsShow] = useState(window.innerWidth <= 950 ? false : true);
@@ -27,8 +29,11 @@ const Header = () => {
 
   const [showClearButton, setShowClearButton] = useState(true);
   const [InputValue, setInputValue] = useState("");
-
+  const [width, setWidth] = useState(window.innerWidth);
   const [isFocus, setIsFocus] = useState(false);
+
+  const { pathname } = useLocation();
+
   const ref = useClickAway(() => {
     setIsMenuOpen(false);
   });
@@ -40,6 +45,7 @@ const Header = () => {
       } else {
         setPlaceHolder(false);
       }
+      setWidth(window.innerWidth);
     };
 
     const watchViewWidth = () => {
@@ -109,7 +115,9 @@ const Header = () => {
               onSubmit={(e) => {
                 e.preventDefault();
               }}
-              style={{ backgroundColor: isFocus ? "#fff" : "#eee" }}
+              style={{
+                backgroundColor: isFocus ? "#fff" : "#eee",
+              }}
             >
               <button>
                 <img src={search} alt="search" title="search Unsplash" />
@@ -227,7 +235,7 @@ const Header = () => {
 
                                 <Link to="/advertise">
                                   {" "}
-                                  <li>Advertise</li>
+                                  {/* <li>Advertise</li> */}
                                 </Link>
 
                                 <li>
@@ -620,107 +628,9 @@ const Header = () => {
           </div>
         </nav>
       </header>
-      {/* Section -2 */}
-      <div className="section__2">
-        <div className="section__2_1">
-          <div className="section__2_1__2">
-            <div className="section__2_container">
-              {/* part--1 */}
-              <div className="part--1">
-                <ul>
-                  <li>
-                    <span style={{ boxShadow: "inset 0 -2px #111" }}>
-                      Editorial
-                    </span>
-                  </li>
-                  <li>
-                    <span>Unsplash+</span>
-                  </li>
-                </ul>
-              </div>
 
-              {/* part--2 */}
-              <div className="part--2">
-                <div className="part--2_child"></div>
-              </div>
-
-              {/* Part--3 */}
-              <div style={{ minWidth: "0" }}>
-                <div className="carrier__btn">
-                  {/* Right Button */}
-                  <div className="right__btn">
-                    <button type="button" title="scroll list to the right">
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        version="1.1"
-                        aria-hidden="false"
-                        fill="#767676"
-                      >
-                        <desc lang="en-US">Chevron right</desc>
-                        <path d="M8.5 5.5 10 4l8 8-8 8-1.5-1.5L15 12 8.5 5.5Z"></path>
-                      </svg>
-                    </button>
-                  </div>
-
-                  {/* Left btn */}
-                  <div className="left__btn">
-                    <button type="button" title="scroll list to the left">
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        version="1.1"
-                        aria-hidden="false"
-                        fill="#767676"
-                      >
-                        <desc lang="en-US">Chevron left</desc>
-                        <path d="M15.5 18.5 14 20l-8-8 8-8 1.5 1.5L9 12l6.5 6.5Z"></path>
-                      </svg>
-                    </button>
-                  </div>
-
-                  {/* main content */}
-                  <div className="Part--3">
-                    <ul>
-                      <li style={{ display: "none" }}>Editorial</li>
-                      <li style={{ display: "none" }}>Unsplash+</li>
-                      <li>
-                        <div>
-                          <span className="featured">
-                            <span>Featured</span>
-                          </span>
-                          UGC
-                        </div>
-                      </li>
-                      <li>Wallpapers</li>
-                      <li>Nature</li>
-                      <li>3D Renders</li>
-                      <li>Travel</li>
-                      <li>Architecture &amp; Interiors</li>
-                      <li>Textures &amp; Patterns</li>
-                      <li>Street Photography</li>
-                      <li>Film</li>
-                      <li>Archival</li>
-                      <li>Experimental</li>
-                      <li>Animals</li>
-                      <li>Fashion &amp; Beauty</li>
-                      <li>People</li>
-                      <li>Spirituality</li>
-                      <li>Business &amp; Work</li>
-                      <li>Food &amp; Drink</li>
-                      <li>Health &amp; Wellness</li>
-                      <li>Sports</li>
-                      <li>Current Events</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Section-2 */}
+      {pathname === "/" && <HeaderOption width={width} />}
     </>
   );
 };

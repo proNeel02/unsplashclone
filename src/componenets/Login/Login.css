@@ -68,6 +68,10 @@
     padding-left: 10px;
 }
 
+.section3 form input:hover{
+    border-color:  #111;
+}
+
 .password-div{
     width: 100%;
     display: flex;
